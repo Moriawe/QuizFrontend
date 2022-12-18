@@ -37,3 +37,9 @@
 .green button {
   background-color: green;
 }
+
+/* New Quiz */
+
+.new-quiz-box {
+  flex-direction: column;
+}

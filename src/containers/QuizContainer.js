@@ -5,14 +5,14 @@ import AnswerButton from "../components/AnswerButton"
 const QuizContainer = () => {
   const [quiz, setQuiz] = useState(null)
 
-  //const url = "https://enlitenwebapp.azurewebsites.net/api/quiz"
-  const url = "http://localhost:8000/quizzes"
+  const url = "https://enlitenwebapp.azurewebsites.net/api/quiz"
 
   useEffect(() => {
     axios
       .get(url)
       .then((response) => {
-        setQuiz(response.data[0])
+        setQuiz(response.data)
+        console.log(quiz)
       })
       .catch((err) => {
         console.log(err)

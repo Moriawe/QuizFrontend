@@ -1,5 +1,11 @@
+import InputForm from "../containers/InputForm"
+
 const NewQuiz = () => {
-  return <div className="page">Make a new quiz</div>
+  return (
+    <div className="page">
+      <InputForm />
+    </div>
+  )
 }
 
 export default NewQuiz
