@@ -1,15 +1,14 @@
 import axios from "axios"
 import { useState } from "react"
-import QuizContainer from "./QuizContainer"
+import { useNavigate } from "react-router-dom"
 
 const AskForQuiz = () => {
   const [quiz, setQuiz] = useState({})
+  const navigate = useNavigate()
 
-  const onStartQuiz = () => {
-    const url = "https://enlitenwebapp.azurewebsites.net/api/quiz"
-    //const url = "https://the-trivia-api.com/api/questions?limit=1"
-
-    console.log("You pushed the button")
+  const fetchQuiz = async () => {
+    //const url = "https://enlitenwebapp.azurewebsites.net/api/quiz"
+    const url = "http://localhost:8000/quizzes"
 
     axios
       .get(url)
@@ -17,17 +16,23 @@ const AskForQuiz = () => {
         console.log(response)
         setQuiz(response.data[0])
         console.log(quiz)
+        navigate("/quizpage")
       })
       .catch((err) => {
         console.log(err)
       })
   }
 
+  const onStartQuiz = () => {
+    console.log("You pushed the button")
+    fetchQuiz()
+  }
+
   return (
     <div className="container">
-      <p>Do you think you're smart?</p>
+      <p>Do you want to play our Quizgame?</p>
       <button id="start-btn" onClick={onStartQuiz}>
-        Start the Quiz
+        Give me a Question!
       </button>
     </div>
   )
@@ -36,9 +41,7 @@ const AskForQuiz = () => {
 export default AskForQuiz
 
 /*
-      {quiz && (
-        <div>
-          <QuizContainer quiz={quiz} />
-        </div>
-      )}
-      */
+<div>
+<QuizContainer quiz={quiz} />
+</div>
+*/

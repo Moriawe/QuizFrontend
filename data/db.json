@@ -1,4 +1,5 @@
-[
+{
+  "quizzes": [
   {
   "id": "ad260927-94f3-429e-b158-f60b9492cd70",
   "triviaId": "622a1c367cc59eab6f9503b1",
@@ -62,5 +63,5 @@
     }
   ],
   "question": "Where would you find the city of Barcelona?"
+} ]
 }
-]
