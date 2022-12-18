@@ -1,9 +1,9 @@
-import AskForQuiz from "../containers/AskForQuiz"
+import Start from "../containers/Start"
 
 const Home = () => {
   return (
     <div className="page">
-      <AskForQuiz />
+      <Start />
     </div>
   )
 }
